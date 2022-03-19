@@ -27,7 +27,10 @@ public class FoodAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return arrayList.size();
+        if (arrayList.size() != 0 && arrayList.isEmpty()) {
+            return arrayList.size();
+        }
+        return 0;
     }
 
     @Override
@@ -45,7 +48,7 @@ public class FoodAdapter extends BaseAdapter {
         view = LayoutInflater.from(ctx).inflate(layoutItem, viewGroup, false);
         // Ánh sạ các textview và img
         TextView tvName = view.findViewById(R.id.tvName);
-        TextView tvPrice = view .findViewById(R.id.texPrice);
+        TextView tvPrice = view.findViewById(R.id.texPrice);
         ImageView imgFood = view.findViewById(R.id.imgFood);
         //Gán giá trị từ mảng cho textview và img
         tvName.setText(arrayList.get(i).getName());

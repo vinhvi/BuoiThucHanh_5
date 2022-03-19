@@ -8,31 +8,32 @@
 
     <ListView
         android:id="@+id/lvFood"
-        android:layout_width="407dp"
-        android:layout_height="423dp"
+        android:layout_width="388dp"
+        android:layout_height="428dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.275"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/foodSearch"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="@+id/foodSearch"
+        app:layout_constraintTop_toBottomOf="@+id/btnDonut"
         app:layout_constraintVertical_bias="0.0">
 
 
     </ListView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnDonut"
         android:layout_width="82dp"
         android:layout_height="42dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#FFEB3B"
         android:text="Dount"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintStart_toStartOf="@+id/foodSearch"
+        app:layout_constraintTop_toBottomOf="@+id/foodSearch" />
 
     <TextView
         android:id="@+id/textView3"
@@ -59,40 +60,21 @@
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="233dp"
+    <EditText
+        android:id="@+id/foodSearch"
+        android:layout_width="271dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
-        android:visibility="visible"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Search food..."
-            android:visibility="visible"
-            tools:visibility="visible" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="45dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/group_18" />
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnPinkD"
         android:layout_width="117dp"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
@@ -101,13 +83,13 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDonut"
+        app:layout_constraintStart_toEndOf="@+id/btnDonut"
+        app:layout_constraintTop_toTopOf="@+id/btnDonut"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnFloating"
         android:layout_width="88dp"
         android:layout_height="40dp"
         android:layout_marginStart="12dp"
@@ -116,9 +98,24 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPinkD"
+        app:layout_constraintStart_toEndOf="@+id/btnPinkD"
+        app:layout_constraintTop_toTopOf="@+id/btnPinkD"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="87dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="Search"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/foodSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
