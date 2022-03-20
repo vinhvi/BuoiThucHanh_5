@@ -52,7 +52,7 @@ public class Main extends AppCompatActivity {
                 arrSearch.clear();
                 for (Food food : arrayList) {
                     String st = foodSearch.getText().toString();
-                    if (food.getName().toString().contains(st)) {
+                    if (food.getName().toString().equals(st)) {
                         arrSearch.add(food);
                     }
                 }
@@ -60,7 +60,6 @@ public class Main extends AppCompatActivity {
                 btn[0] = (Button) findViewById(btnID[0]);
                 btn[0].setBackgroundColor(Color.rgb(3, 106, 150));
                 btn[0].setOnClickListener(this);
-
 
                 btn[1] = (Button) findViewById(btnID[1]);
                 btn[1].setBackgroundColor(Color.rgb(207, 207, 207));

@@ -27,7 +27,7 @@ public class FoodAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        if (arrayList.size() != 0 && arrayList.isEmpty()) {
+        if (arrayList.size() != 0 && !arrayList.isEmpty()) {
             return arrayList.size();
         }
         return 0;
