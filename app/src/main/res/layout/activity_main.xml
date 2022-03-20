@@ -8,11 +8,11 @@
 
     <ListView
         android:id="@+id/lvFood"
-        android:layout_width="388dp"
-        android:layout_height="428dp"
+        android:layout_width="402dp"
+        android:layout_height="431dp"
         android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/foodSearch"
         app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="@+id/foodSearch"

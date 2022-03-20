@@ -1,11 +1,14 @@
 package com.example.myapplication.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +26,10 @@ public class Main extends AppCompatActivity {
     ArrayList<Food> arrSearch;
     Button btnSearch;
     EditText foodSearch;
+    Button btnAdd;
+    ImageView img;
+    TextView name;
+    TextView price;
 
     private Button[] btn = new Button[3];
     private Button btn_Unfocus;
@@ -34,8 +41,14 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         lvFood = findViewById(R.id.lvFood);
 
+        getSupportActionBar().setTitle("1");
+
         btnSearch = findViewById(R.id.btnSearch);
         foodSearch = findViewById(R.id.foodSearch);
+        btnAdd = findViewById(R.id.btnAdd);
+        img = findViewById(R.id.imgFood);
+        name = findViewById(R.id.tvName);
+        price = findViewById(R.id.texPrice);
 
         arrayList = new ArrayList<>();
         arrayList.add(new Food(R.drawable.donut_yellow_1, "Tasty Dount", "$10.00"));
@@ -52,7 +65,7 @@ public class Main extends AppCompatActivity {
                 arrSearch.clear();
                 for (Food food : arrayList) {
                     String st = foodSearch.getText().toString();
-                    if (food.getName().toString().equals(st)) {
+                    if (food.getName().toString().contentEquals(st)) {
                         arrSearch.add(food);
                     }
                 }
@@ -72,7 +85,29 @@ public class Main extends AppCompatActivity {
                 btn_Unfocus = btn[0];
             }
         });
-
-
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextActivity();
+            }
+        });
     }
+
+    private void nextActivity() {
+        int id = img.getId();
+        String name2 = name.getText().toString().trim();
+        String price2 = price.getText().toString().trim();
+
+        Food food = new Food(id, name2, price2);
+
+        Intent intent = new Intent(Main.this, Main2.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("focus_food", food);
+
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+
 }
